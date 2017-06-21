@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>OpenTable</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/admin-styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapps" >
+      <div class="container">
+        <div class="row text-center">
+
+          <div class="header homes" id="homes" style="display:none">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8"></div>
+            <div class="col-xs-2"></div>
+          </div>
+
+          <div class="header startt" id="startt" style="display:none">
+            <div class="col-xs-2 imgback"><img src="images/arrow-left.png" class="back"></div>
+            <div class="col-xs-8">OPENTABLE</div>
+            <div class="col-xs-2"></div>
+          </div>
+
+          <div class="header customer" id="customer" style="display:none">
+            <div class="col-xs-3 imgback"><img src="images/arrow-left.png" class="back touch-back"></div>
+            <div class="col-xs-6" id="nameofCustomer"></div>
+            <div class="col-xs-3" id="getTheSummary">
+              <div class="touch-total"><img src="images/total.png"></div>
+            </div>
+          </div>
+
+          <div id="content">
+  <div class="global-modals">
+              <div id="id01" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Alerta</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Aún tiene una orden pendiente que añadir, ¿quiere realizar el pedido?</p>
+                  </div>
+                  <footer class="cc-container">
+                    <button class="btn cc-btn-secondary" data-ta="no" data-info="id01" type="button">No</button>
+                    <button class="btn cc-btn-primary" data-ta="yes" data-info="id01" type="button">Sí</button>
+                  </footer>
+                </div>
+              </div>
+
+              <div id="id010" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Alerta</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Aún tiene una orden pendiente que añadir, ¿quiere realizar el pedido?</p>
+                  </div>
+                  <footer class="cc-container">
+                    <button class="btn cc-btn-secondary" data-ta="no_order" data-info="id010" type="button">No</button>
+                    <button class="btn cc-btn-primary" data-ta="yes_order" data-info="id010" type="button">Sí</button>
+                  </footer>
+                </div>
+              </div>
+
+              <div id="id02" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Advertencia!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Introduzca el nombre del cliente</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id03" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Advertencia!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Introduzca la etiqueta</p>
+                  </div>
+                </div>
+              </div>
+
+               <div id="id05" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Advertencia!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Introduzca el precio unitario</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id04" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Advertencia!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Esto borrará todos los datos en el turno de hoy. ¿Seguro que quieres terminar el turno?</p>
+                  </div>
+                    <footer class="cc-container">
+                    <button class="btn cc-btn-secondary cancel" data-info="id04" type="button">No</button>
+                    <button class="btn cc-btn-primary " data-info="id04" data-ta="yes_shift" type="button">Sí</button>
+                  </footer>
+                </div>
+              </div>
+
+
+              <div id="id07" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                 
+                    <div class="cc-modal-header">
+                      <h3>Alerta</h3>
+                    </div>
+                 
+                  <div class="cc-container">
+                    <p>Estás a punto de cerrar la mesa y esto imprimirá un recibo. ¿Estás seguro de que quieres cerrar la tabla?</p>
+                  </div>
+                  <div class="cc-container">
+                     
+                     <button class="btn cc-btn-secondary cancel" data-info="id07" type="button"  value="Cancel">No</button>
+                     <button class="btn cc-btn-primary closetab" data-info="id07" data-ta="yes_table" type="button"  value="Ok">Sí</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/Global Modals-->
+            <div class="row home" id="home" style="display:none">
+              <div class="col-xs-12">
+                <div class="ot-app-title">OPENTABLE</div>
+                <img class="ot-app-icon" src="images/app-icon.png"><br>
+                <button class="btn ot-btn-primary add_field_button" type="button">+ AGREGAR COMENZAL</button>
+              </div>
+            </div>
+
+            <div class="addCustomer" id="addCustomer" style="display:none">
+             <div class="row"><!--2nd-->
+                <div class="col-xs-11">
+                  <div class="ot-cust-name">
+                   
+                    <input type="text" class="myInputs" id="name" placeholder="Introduzca el nombre del client">
+                  </div>
+                </div>
+              </div>
+           
+
+            <div class="row">
+              <div class="col-xs-12">
+                <input type="submit" class="btn ot-btn-primary" id="adCust" value="+ AGREGAR COMENZAL" >
+              </form>
+              </div>
+            </div>
+             </div>
+
+            <div class="listCustomers" id="listCustomers" style="display:none">
+
+              <div class="row"><!--list of customers-->
+                <div class="col-xs-12">
+                  <button class="btn ot-btn-primary pull-right add-bottom add_field_button" type="button">+ AGREGAR COMENZAL</button>
+                </div>
+              </div>
+
+              <div class="row" >
+                <div class="col-xs-12">
+                  <div class="ot-cust-list">
+                    <table class="table" id="listofCustomers">
+                       <tbody>
+                       </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                    <button type="button" class="btn ot-btn-primary ot-text pull-right" id="endShift">
+                      CERRAR TURNO 
+                    </button>
+                </div>
+              </div>
+            
+            </div>
+
+
+            <div class="allOrders" id="allOrders" style="display:none">
+                <div class="row">
+                  <div class="col-xs-12">
+                  <div class="ot-order-container">
+                      <table class="table">
+                        <thead class="ot-tabs">
+                          <tr>
+                            <td style="width:35%; text-align: left;">Etiqueta</td>
+                            <td style="width:22%;">Precio</td>
+                            <td style="width:15%;">QTY</td>
+                            <td style="width:24%;">TOTAL</td>
+                          </tr>
+                        </thead> 
+                      </table>
+                    
+                      <input type="hidden" name="nameCustomer" id="nameCustomer">
+                       <table class="table">
+                         
+                          <tbody>
+                            <tr>
+                              <div class="row"><div class="col-xs-6">
+
+                              <td style="width:50%;text-align: left;">
+                              <input type="text"  name="label" placeholder="e.g.label" id="label" class="myInput"  size="6" required>
+                              </td>
+                              <td style="width:10%">
+                                <input type="text" name="unitp" style="text-align:center;" id="unitp" placeholder="0" id="unitp" class="myInput" value="" size=3  required>
+                              </td>
+                              <td style="width:20%;">
+                                  <div class="row">
+                                    <div class="col-xs-6">
+                                      <input type='text' name='quantity' style="text-align: center;" value="0" id="qty" class='qty myInput' readonly/>
+                                    </div>
+
+
+                                    <div class="col-xs-6">
+                                      <input type='button' value='+' class='qtyplus' id="plus" />
+                                    </div>
+
+
+                                    <div class="col-xs-6">
+                                      <input type='button' value='-' class='qtyminus' id="minus"  />
+                                    </div>
+                                  </div>
+
+                              </td>
+                              <td style="text-align: right">
+                                <input type="text" style="text-align: center;" name="total" value="0" class="myInput" id="total" size=5 readonly>
+                              </td> 
+                            </tr>
+                          </tbody>                  
+                        </table>
+                        
+                        <div class="ot-orders inputshere">
+                       <table class="table" id="listofOrders">
+                         <tbody>
+                         </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+
+                <!-- <div class="row">
+                  <div class="col-xs-12">
+                    <button class="btn ot-btn-primary" id="adOrder" type="button">+ NUEVO ORDEN</button>
+                  </div>
+                </div> -->
+            </div>
+
+            <div id="summarized" class="summarized" style="display:none">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="ot-page-title">RESUMEN</div>
+                  </div>
+                  <div class="row dateandtime" style="display:none">
+                    <div class="col-xs-6" style="text-align:left">
+                      <div class="dates"></div>
+                    </div>
+                    <div class="col-xs-6">
+                      <div class="times" style="text-align:right"></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row" >
+                  <div class="col-xs-12">
+                  <div class="ot-summary-container">
+                      <table class="table">
+                        <thead class="ot-tabs">
+                          <tr>
+                          <td style="width:35%; text-align: left;">Etiqueta</td>
+                          <td style="width:22%;">Precio</td>
+                          <td style="width:15%;">QTY</td>
+                          <td style="width:24%;">TOTAL</td>
+                          </tr>
+                        </thead> 
+                      </table>
+                    <div class="ot-summary inputshere">
+
+                      <table class="table" id="summaryofOrders">
+
+                        <tbody>
+                         
+                        </tbody>     
+                      </table>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-12">
+                    <table class="table">
+                      <tr>
+                        <td class="ot-b" style="text-align: left;"><p class="add-left" style="margin-bottom:0">Gran Total:</p></td>
+                        <td class="ot-b ot-text text-right gtotal" style="text-align:right;font-weight:bold; padding-right: 5px;"></td>
+                        <td class="ot-b ot-text" style="text-align: left;">&nbsp;&euro;</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="row" class="notForPrint" >
+                  <div class="col-xs-12">
+                    <table class="table">
+                      <tr>
+                        <td style="border-top:0; padding:5px 0 0">
+                          <button class="btn ot-btn-primary pull-left prints" type="button">Impresion</button>
+                        </td>
+                        <td style="border-top:0; padding:5px 0 0">
+
+                        <button type="button" class="btn ot-btn-primary ot-text pull-right closetable" id="closeTable">
+                            Cerrar la Table
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+
+
+                <div id="id11" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                
+                    <div class="cc-modal-header">
+                    
+                      Metodo de Pago
+                   
+                  </div>
+                  
+                  <div class="cc-container">
+                    <p><span>Cantidad Total: </span><span id="receipt"></span></p>
+                  </div>
+                  <footer class="cc-container">
+                     <button class="btn btn-disabled payment" id="fpickcb" method-name="cb"><img src="images/cb.png" /><span class="pf pf-cb"></span>
+                    </button>
+                     <button class="btn btn-disabled payment" id="fpickcash" method-name="cash"><img src="images/cash.png" />
+                  </footer>
+                </div>
+                </div>
+
+
+                
+            </div>
+            
+
+          </div><!-- content -->
+
+         
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- wrapps -->
+  </body>
+ 
+<script src="js/tetra.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/open.js"></script>
+</html>

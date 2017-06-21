@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cash Counter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/admin-styles.css">
+ 
+</head>
+<body>
+  <div id="cc-main-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+
+          <!-- Header -->
+          <div id="header">
+            <div class="row" id="back" >
+              <div class="two columns" >
+                &nbsp;
+                <a class="cc-rel-con back" type="button" style="display:none">
+                <img class="cc-btn-back" src="images/arrow-left.png"></a>
+              </div>
+              <div class="eight columns remove-left text-center branding">
+               <label class="cc-branding">
+               <img class="logo1" src="images/logo1.png">
+               <img class="logo2" src="images/logo2.png"><span> Cash Counter</span></label>
+              </div>
+             
+            </div>
+          </div>
+          <!-- /Header -->
+
+          <!-- Content -->
+          <div id="content">
+            
+          <div class="global-modals">
+              <div id="id01" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Alert</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Please set your currency first to continue.</p>
+                  </div>
+                  <footer class="cc-container">
+                    <button class="btn cc-btn-secondary cancel" data-info="id01" type="button">Cancel</button>
+                    <button class="btn cc-btn-primary currency" type="button">Proceed</button>
+                  </footer>
+                </div>
+              </div>
+
+               <div id="id010" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="row">
+                    <div class="cc-modal-header">
+                      <h3>Warning</h3>
+                    </div>
+                  </div>
+                  <div class="cc-container">
+                    <p>Are you sure you want to remove all your transaction history?</p>
+                  </div>
+                  <div class="cc-container">
+                     <button class="btn cc-btn-primary" id="okbuttonid010" type="button" value="Ok">Yes</button>
+                     <button class="btn cc-btn-secondary cancel" data-info="id010" type="button"  value="Cancel">No</button>
+                  </div>
+                </div>
+              </div>
+           
+          
+              <div id="id02" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Transaction succesful!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Transaction succesfully saved.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id015" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Attention!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Attention your current transaction will be deleted. Your transaction is available in the history.</p>
+                  </div>
+                </div>
+              </div>
+
+               <div id="id08" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Alert!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id012" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Alert!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Nothing to email </p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id03" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                   
+                    <h3>Invalid!</h3>
+                
+                  </div>
+                  <div class="cc-container">
+                    <p>Please check your input.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id04" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Success!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Email successfully set.</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div id="id05" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Alert!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Nothing to save</p>
+                  </div>
+                </div>
+              </div>
+
+             
+              <div id="id07" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="row">
+                    <div class="cc-modal-header">
+                      <h3>Warning</h3>
+                    </div>
+                  </div>
+                  <div class="cc-container">
+                    <p>Your current transaction will be deleted. Are you sure you want to exit?</p>
+                  </div>
+                  <div class="cc-container">
+                     <button class="btn cc-btn-primary okbutton" type="button" value="Ok">Yes</button>
+                     <button class="btn cc-btn-secondary cancel" data-info="id07" type="button"  value="Cancel">No</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/Global Modals-->
+            <!--Welcome Screen-->
+            <div id="welcome-screen" class="homepage" style="display:none">
+              <div class="row">
+                <div class="twelve columns text-center">
+                  <div class="cc-wc-title">Welcome to Ingenico</div>
+                  <p class="cc-wc-msg">Throughout this application, you will have the opportunity to get the full detail of your cash register.
+Once a sale completed, you will be able to view the summary transaction ticket containing the amount of coins and bills used by the customer.
+The application also has a configurable history to get an overview of the different transactions. </p>
+                  <!--Count Bill Btn-->
+                  <a  type="button" class="btn cc-btn cash_all" >
+                    <img src="images/cash.png" alt="Cash">
+                  </a>
+                  <!--/Count Bill Btn-->
+                  <!--History Btn-->
+                  <a type="button" class="btn cc-btn history" >
+                    <img src="images/history.png" alt="History">
+                  </a>
+                  <!--/History Btn-->
+                  <!--Settings Btn-->
+                  <a type="button" class="btn cc-btn settings">
+                    <img src="images/settings.png" alt="Settings">
+                  </a>
+                  <!--/Settings Btn-->
+                </div>
+              </div>
+            </div>
+            <!--/Welcome Screen-->
+            
+            <!--DATA CONTROLER-->
+            <div id="StorageList" style="display:none" >
+              <div >
+
+                <!--MAIN TABS-->
+                <div id="cc-main-tabs">
+                  <div class="row">
+                    <div class="twelve columns">
+                      <div class="cc-tabs">
+                   
+                        <a  href="#" class="btn cc-tab"  id="coinPanel">COIN</a>
+                        <a href="#" class="btn cc-tab" id="bankPanel">BANKNOTES</a>
+                        <a href="#" class="btn cc-tab" id="totalPanel">TOTAL</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             
+
+                <div class="main-data-controller-container">
+                <!--/MainCtrl-->
+                    <div>
+                      <div >
+                           <ul id="listss" style="display:none">
+                           </ul>
+                              <ul id="listss_bank" style="display:none">
+                          
+                           </ul>
+             
+                        <div id="cc-input-controller" >
+                           
+                          <div id="inputofnumber">
+                            <h1><span id="vals"></span><span id="symb"></span></h1>
+                            <!--  <input id="coinsandbanks" type="text" class="ingenico-form-control"  />
+                             <input id="coinsandbanks_b" type="text" class="ingenico-form-control"/>
+                            -->
+                            
+                           <!--  <div id="coinsandbanks2" class="hidden-text" /></div> -->
+                           <div id="coinsandbanks2" class="hidden-text-cs" >
+                      
+                            </div>
+                            <div id="coinsandbanks_b2" class="hidden-text-cs" >
+                          
+                             </div>
+                            
+                           
+
+                            <div class="show-me">
+                              <h2 id="valuescheck"></h2>
+                            </div>
+
+                            <div style="width: 0;overflow:hidden">
+                            <input id="coinsandbanks"  type="text"  class="hide-text" maxlength="4"/> 
+                            <input id="coinsandbanks_b"  type="text" class="hide-text" maxlength="4"/> 
+                            </div>
+                          </div>
+                          <!--/INPUT-->
+
+                          <div id="forTotal" style="display:none">
+
+                            <div id="result" >
+
+                              <div class="cc-dt">
+                                <div class="row">
+                                    <div class="cc-print-date pull-left"><b>DATE:</b> <br />  <span id="datetoday2"></div>
+                                    <div class="cc-print-time pull-right"><b>TIME:</b> <br />  <span id="timetoday2"></div>
+                                </div>
+                              </div>
+
+                              <div id="data-controller">
+                                <div class="row">
+                                  <!-- total -->
+                                  <div class="table-responsive">
+
+                                    <table class="table">
+                                        <tr>
+                                          <td><label><b>Total:</b></label></td>
+                                          <td class="text-right cc-sum-total" ><label id="sum-total"></label></td>
+                                        </tr>
+                                    </table>
+
+                                    <div class="data-controller-total-container">
+
+                                      <table class="table" id="coins_tab">
+                                        <thead>
+                                        <tr>
+                                          <td width="40%"><b>Coins:</b></td>
+                                          <td width="20%" class="text-center" id="numberofcoins"></td>
+                                          <td width="40%" class="text-right" id="sum-total-coins"></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                        </tbody>
+                                      </table>
+
+                                      <table class="table" id="banks_tab">
+                                        <thead>
+                                          <tr>
+                                            <td width="40%"><b>Bills:</b></td>
+                                            <td width="20%" class="text-center" id="numberofbanks"></td>
+                                            <td width="40%" class="text-right" id="sum-total-banks"></td>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                        </tbody>
+                                      </table>
+
+
+                                    </div>
+                                    <!--/data-controller-total-->
+                                  </div>
+                                  <!-- total -->
+                                </div>
+                              </div>
+
+                              <div class="result-footer">
+                                <button type="button" class="btn cc-btn" id="saveAll">Save</button>
+                                <button type="button" class="btn cc-btn-print" id="print">Print</button>
+                                <button type="button" class="btn cc-btn-email" id="sendemail" >Email</button>
+                              </div>
+
+                                  
+                            </div>
+                            <!--/resultt-->
+
+                           
+                          </div>
+                          <!--PRINT StorageController-->
+
+                        </div><!-- StorageExampleCtrl -->
+
+                      </div><!-- /DIR-PAGINATE-->
+                    </div>
+                <!--/MainCtrl-->
+                </div>
+
+              </div>
+            </div>
+            <!--/DATA CONTROLER-->
+
+            <!--Settings Navigation-->
+            <div id="settings" style="display:none">
+          
+              <div class="cc-page-title" >Settings</div>
+                <div class="settings-container">
+                  <button class="cc-btn-settings currency" type="button">Change Currency<img class="pull-right" src="images/arrow-right.png"/></button>
+                  <button class="cc-btn-settings email" type="button" >Change Email<img class="pull-right" src="images/arrow-right.png"/></button>
+                  <button class="cc-btn-settings history_settings" type="button" >History<img class="pull-right" src="images/arrow-right.png"/></button>
+                </div>
+           
+            </div>
+            <!-- /Settings Navigation-->
+
+            <!--Settings - Change Currency - DONE-->
+            <div id="currency" style="display:none">
+              <div class="cc-page-title" >Currency</div>
+             <!--  <div class="cc-page-title" data-ng-show="notif1" ng-init="notif1=false">{{list}}</div> -->
+              <div class="currency-container">
+          
+                <label>EUR<br><small>Euro</small><input class="pull-right" type="radio" name="currency"
+                 value="EUR"></label>
+                <label>AUD<br><small>Australian Dollar</small><input class="pull-right" type="radio" name="currency" value="AUD"></label>
+                <label>CAD<br><small>Canadian Dollar</small><input class="pull-right" type="radio" name="currency" value="CAD"></label>
+                <label>CHF<br><small>Swiss Franc</small><input class="pull-right" type="radio" name="currency" value="CHF"></label>
+                <label>GBP<br><small>British Pound</small><input class="pull-right" type="radio" name="currency" value="GBP"></label>
+                <label>CNY<br><small>Chinese Yuan</small><input class="pull-right" type="radio" name="currency" value="CNY"></label>
+                <label>INR<br><small>Indian Rupee</small><input class="pull-right" type="radio" name="currency" value="INR"></label>
+                <label>JPY<br><small>Japanese Yen</small><input class="pull-right" type="radio" name="currency" value="JPY"></label>
+                <label>BRL<br><small>Brazilian Real</small><input class="pull-right" type="radio" name="currency" value="BRL"></label>
+                <label>MXN<br><small>Mexican Peso</small><input class="pull-right" type="radio" name="currency" value="MXN"></label>
+              </div>
+            </div>
+            <!-- /Settings - Change Currency -->
+
+            <!-- Settings - Change Email -->
+            <div id="settings_email" style="display:none">
+              <div class="cc-page-title">Email Settings</div>
+              <div >
+                <p>Add or change your email address here</p>
+                 <input  id="useremail" name="useremail" placeholder="Change Email" type="text" >
+                <div>
+                  <button class="btn cc-btn add-m-left"  type="button" id="update_email">Update</button>
+                </div>
+              </div>
+            </div>
+            <!-- /Settings - Change Email -->
+
+            <!-- Settings - History - DONE-->
+            
+
+                <div id="history_list" style="display:none">
+                  <div class="cc-page-title">History Settings</div>
+           
+                    <div class="history-container">
+                   <!--  <label>Clear History <input class="pull-right" type="radio" name="history" value="reset"></label>
+                    <label>History Today <input class="pull-right" type="radio" name="history" value="1"></label> -->
+                    <label>History by 3 days <input class="pull-right" type="radio" name="history" value="3"></label>
+                    <label>History by 7 days <input class="pull-right" type="radio" name="history" value="7"></label>
+                    <label>History by 1 Month <input class="pull-right" type="radio" name="history" value="30"></label>
+                    <label>History by 6 Months <input class="pull-right" type="radio" name="history" value="180"></label>
+                  </div>
+                </div>
+       
+                <div id="history" style="display:none">
+                  <div class="cc-page-title">History</div>
+                  <div class="row">
+                    <div class="twelve columns">
+                      <div class="history-container-results">
+                        <div id="historytable">
+
+                                  </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+           
+          
+
+          <!-- /content -->
+
+          <!-- Footer -->
+          <div id="footer">
+            <div class="row">
+              <div class="one-half column remove-left">
+                <div class="cc-date text-left" id="datetoday"></div>
+              </div>
+              <div class="one-half column remove-left">
+                <div class="cc-time text-right" id="timetoday"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /Footer -->
+          </div>
+          </div>
+        </div>
+      </div>
+  
+</body>
+</html>
+<script src="js/zepto.min.js"></script>
+<script src="app/moment.js"></script>
+
+<script src="js/app.js"></script>
